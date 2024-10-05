@@ -1,0 +1,67 @@
+### Get All Books (Default Version)
+GET http://localhost:8080/books
+Accept: application/json
+
+### Get All Books (Custom Header Versioning)
+GET http://localhost:8080/books
+X-API-VERSION: 2
+Accept: application/json
+
+### Get All Books (URI Versioning)
+GET http://localhost:8080/books/v1
+Accept: application/json
+
+### Get All Books (Request Parameter Versioning)
+GET http://localhost:8080/books?version=1
+Accept: application/json
+
+### Get a Book by ID (Default Version)
+GET http://localhost:8080/books/1
+Accept: application/json
+
+### Get a Book by ID (URI Versioning)
+GET http://localhost:8080/books/v1/1
+Accept: application/json
+
+### Get a Book by ID (Request Parameter Versioning)
+GET http://localhost:8080/books?id=1&version=1
+Accept: application/json
+
+### Get a Book by ID (Media Type Versioning)
+GET http://localhost:8080/books/1
+Accept: application/cs.miu.edu-v2+json
+
+### Get Books by Title Containing
+GET http://localhost:8080/books/search?title=John
+Accept: application/json
+
+### Get Books by Price Greater Than
+GET http://localhost:8080/books/price?price=200
+Accept: application/json
+
+### Add a New Book
+POST http://localhost:8080/books
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Book 3",
+  "isbn": "3333",
+  "price": 550.0
+}
+
+### Update an Existing Book
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "title": "Book 1",
+  "isbn": "6565",
+  "price": 444.0
+}
+
+### Delete a Book
+DELETE http://localhost:8080/books/1
+Accept: application/json
